@@ -1,7 +1,10 @@
 # webapp
 Module 1: Dashboard
 - Dashboard consists of list of users which are fetched from json file.
-
+Module 2: Users
+- Users consists of list of users which are fetched from json file with additional features of Create, Delete.
+Module 3: UpdateUser
+- UpdateUser useful to update the user in list.
 
 ## Project setup
 ```
