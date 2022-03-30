@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'Srgm2000';
+    src: url('../fonts/musicMR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: 'SrgmEnglish2000';
+    src: url('../fonts/musicEN.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OmeBhatkhandeHindi';
+    src: url('../fonts/BhMr.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OmeBhatkhandeEnglish';
+    src: url('../fonts/BhEn.ttf') format('truetype');
+}
