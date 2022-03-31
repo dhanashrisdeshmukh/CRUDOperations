@@ -6,6 +6,13 @@ Module 2: Users
 Module 3: UpdateUser
 - UpdateUser useful to update the user in list.
 
+# Json server
+We have to run json server to access static json file.
+command to run json server :
+```
+npm run db:serve
+```
+
 ## Project setup
 ```
 yarn install
