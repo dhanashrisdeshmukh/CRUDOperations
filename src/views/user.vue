@@ -101,9 +101,9 @@ export default {
     };
   },
 
-  created() {
+  mounted() {
     axios
-      .get("/db/userList.json")
+      .get("http://localhost:3001/users")
       .then((response) => {
         console.log(response.data);
         this.userList = response.data;
@@ -120,19 +120,19 @@ export default {
           this.createModal=false
       },
     createUser() {
-        this.userList.push(this.user)
+        // this.userList.push(this.user)
         console.log("this.user",this.user)
         this.createModal=false
-    //   axios
-    //     .post("/db/userList.json",
-    //     {
-    //         body : this.user})
-    //     .then((Response) => {
-    //       console.log(Response);
+      axios
+        .post("http://localhost:3001/users",
+         this.user)
+        .then((Response) => {
+          console.log("post",Response.data);
+          this.userList.push(Response.data)
 
-    //     })
-    //     .catch((err) => console.log(err));
-//     let data = JSON.stringify(this.userList);
+        })
+        .catch((err) => console.log(err));
+    // let data = JSON.stringify(this.userList);
 // fs.writeFileSync("/db/userList.json", data);
     },
    edituser(e,x){
@@ -143,7 +143,22 @@ export default {
     // Delete data
     deleteUser(e,x) {
        if(confirm("Do you really want to delete?")){
-                   this.userList.splice(this.userList.indexOf(x),1);
+          axios
+        .delete("http://localhost:3001/users/"+x.id
+         )
+        .then(() => {
+
+           axios
+      .get("http://localhost:3001/users")
+      .then((response) => {
+        console.log(response.data);
+        this.userList = response.data;
+      })
+      .catch((err) => console.log(err));
+
+        })
+        .catch((err) => console.log(err));
+                  
 
    }
         
